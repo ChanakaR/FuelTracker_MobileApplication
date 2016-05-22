@@ -1,6 +1,5 @@
 package com.example.bmcsoft.fueltracker.objects;
 
-import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.Date;
