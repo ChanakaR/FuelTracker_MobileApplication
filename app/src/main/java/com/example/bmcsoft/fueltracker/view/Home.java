@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -39,6 +40,7 @@ public class Home extends Fragment implements View.OnClickListener{
     private View view;
     private Button btnAddFillUp;
     private String JSON_STRING;
+    private LinearLayout btnStartTrip;
 
     @Nullable
     @Override
@@ -49,18 +51,12 @@ public class Home extends Fragment implements View.OnClickListener{
 
         btnAddFillUp = (Button) view.findViewById(R.id.addFillUp);
         btnAddFillUp.setOnClickListener(this);
+        btnStartTrip = (LinearLayout) view.findViewById(R.id.home_start_trip);
+        btnStartTrip.setOnClickListener(this);
         return view;
     }
 
-    private void showFillUpForm(){
-        FragmentManager mFragmentManager;
-        FragmentTransaction mFragmentTransaction;
 
-        mFragmentManager = getFragmentManager();
-        mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.container_view,new AddFillUp());
-        mFragmentTransaction.commit();
-    }
 
     /*
      * set vehicle list in Spinner
@@ -152,6 +148,39 @@ public class Home extends Fragment implements View.OnClickListener{
         if (view ==  btnAddFillUp){
             showFillUpForm();
         }
+        else if(view == btnStartTrip){
+            showStartTrip();
+        }
+    }
+
+    private void showFillUpForm(){
+        FragmentManager mFragmentManager;
+        FragmentTransaction mFragmentTransaction;
+        mFragmentManager = getFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.container_view,new AddFillUp());
+        mFragmentTransaction.commit();
+    }
+
+    public void showStartTrip(){
+        FragmentManager mFragmentManager;
+        FragmentTransaction mFragmentTransaction;
+        mFragmentManager = getFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.container_view,new StartTrip());
+        mFragmentTransaction.commit();
+    }
+
+    public void showMyProgress(){
+
+    }
+
+    public void showAvailableVehicles(){
+
+    }
+
+    public void showMyProfile(){
+
     }
 
 

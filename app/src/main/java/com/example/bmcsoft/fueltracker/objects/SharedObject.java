@@ -9,5 +9,6 @@ import java.util.List;
 public class SharedObject {
     public static List<Vehicle>  VEHICLE_LIST = new ArrayList<>();
     public static Vehicle cur_selected_vehicle =null;
+    public static Driver cur_user=null;
 
 }

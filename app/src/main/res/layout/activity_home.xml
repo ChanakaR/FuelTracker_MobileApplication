@@ -23,7 +23,8 @@ tools:context="com.example.bmcsoft.fueltracker.view.Home">
             android:layout_weight="1"
             android:background="@android:color/holo_blue_bright"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:id="@+id/home_start_trip">
 
             <ImageView
                 android:layout_width="140dp"
@@ -43,11 +44,12 @@ tools:context="com.example.bmcsoft.fueltracker.view.Home">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:background="@color/material_deep_teal_500"
+            android:background="@android:color/holo_green_light"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/home_avl_vehicles">
 
 
             <ImageView
@@ -80,7 +82,8 @@ tools:context="com.example.bmcsoft.fueltracker.view.Home">
             android:layout_weight="1"
             android:background="@android:color/holo_orange_dark"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/home_my_progress">
 
 
             <ImageView
@@ -101,10 +104,12 @@ tools:context="com.example.bmcsoft.fueltracker.view.Home">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:background="@color/accent_material_dark"
+            android:background="@color/button_material_light"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:id="@+id/home_my_profile">
 
             <ImageView
                 android:layout_width="140dp"

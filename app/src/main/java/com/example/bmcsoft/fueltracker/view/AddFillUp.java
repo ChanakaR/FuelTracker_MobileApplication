@@ -41,7 +41,7 @@ public class AddFillUp extends Fragment implements View.OnClickListener{
         TextView txt_vehicle_name = (TextView)view.findViewById(R.id.text_vehicle_name);
         TextView txt_vehicle_lplate =(TextView)view.findViewById(R.id.text_vehicle_lplate);
         TextView txt_vehicle_ftype = (TextView)view.findViewById(R.id.text_vehicle_ftype);
-        TextView txt_date = (TextView)view.findViewById(R.id.text_date);
+        //TextView txt_date = (TextView)view.findViewById(R.id.text_date);
 
         String v_name =SharedObject.cur_selected_vehicle.getVclass()+"-"+SharedObject.cur_selected_vehicle.getMake()+"-"+SharedObject.cur_selected_vehicle.getModel();
         txt_vehicle_name.setText(v_name);
@@ -49,16 +49,16 @@ public class AddFillUp extends Fragment implements View.OnClickListener{
         txt_vehicle_ftype.setText(SharedObject.cur_selected_vehicle.getFuelType());
 
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        txt_date.setText(date);
+        //txt_date.setText(date);
 
-        btnAdd = (Button)view.findViewById(R.id.btn_add_fillup);
+        btnAdd = (Button)view.findViewById(R.id.btn_add_add_fillup);
         btnAdd.setOnClickListener(this);
         return view;
     }
 
     private void addFillUpDetail(){
 
-        final String date = ((TextView)view.findViewById(R.id.text_date)).getText().toString();
+        final String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());;
         final String unit_price= ((EditText)view.findViewById(R.id.input_unit_price)).getText().toString();
         final String fuel_type = ((TextView)view.findViewById(R.id.text_vehicle_ftype)).getText().toString();
         final String amount = ((EditText)view.findViewById(R.id.input_fuel_amount)).getText().toString();
