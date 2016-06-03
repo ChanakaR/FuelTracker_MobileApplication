@@ -9,13 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bmcsoft.fueltracker.R;
+import com.example.bmcsoft.fueltracker.objects.MyProgress;
+import com.example.bmcsoft.fueltracker.objects.SharedObject;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BarChartFragment extends Fragment {
 
@@ -29,13 +33,22 @@ public class BarChartFragment extends Fragment {
     }
 
     private void drawChart(){
+        HashMap<String, String> cost_log = SharedObject.MY_PROGRESS.getFuelCostData();
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(4f, 0));
-        entries.add(new BarEntry(8f, 1));
-        entries.add(new BarEntry(6f, 2));
-        entries.add(new BarEntry(12f, 3));
-        entries.add(new BarEntry(18f, 4));
-        entries.add(new BarEntry(9f, 5));
+        ArrayList<String> labels = new ArrayList<String>();
+        //entries.add(new BarEntry(4f, 0));
+        //entries.add(new BarEntry(8f, 1));
+        //entries.add(new BarEntry(6f, 2));
+        //entries.add(new BarEntry(12f, 3));
+        //entries.add(new BarEntry(18f, 4));
+        //entries.add(new BarEntry(9f, 5));
+
+        int pos=0;
+        for(String key : cost_log.keySet()){
+            entries.add(new BarEntry(Float.parseFloat(cost_log.get(key)),pos));
+            labels.add(key);
+            pos++;
+        }
 
         BarDataSet dataset = new BarDataSet(entries, "# of Calls");
         /*
@@ -47,13 +60,6 @@ public class BarChartFragment extends Fragment {
          */
         dataset.setColors(ColorTemplate.JOYFUL_COLORS);
 
-        ArrayList<String> labels = new ArrayList<String>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
 
         BarChart chart = (BarChart)view.findViewById(R.id.barChart);
 
@@ -61,7 +67,7 @@ public class BarChartFragment extends Fragment {
 
         chart.setData(data);
 
-        chart.setDescription("# of times Alice called Bob");
+        chart.setDescription("fuel cost vs month");
 
         chart.animateY(2000);
     }

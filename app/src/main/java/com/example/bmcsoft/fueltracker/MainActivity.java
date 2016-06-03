@@ -15,8 +15,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.bmcsoft.fueltracker.objects.SharedObject;
 import com.example.bmcsoft.fueltracker.view.AddFillUp;
 import com.example.bmcsoft.fueltracker.view.Home;
+import com.example.bmcsoft.fueltracker.view.HomeOnTrip;
+import com.example.bmcsoft.fueltracker.view.MyProfile;
+import com.example.bmcsoft.fueltracker.view.MyTrips;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,7 +50,13 @@ public class MainActivity extends AppCompatActivity
     private void setHome(){
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.container_view,new Home());
+
+        if(SharedObject.APPLICATION_TRIP_STATE){
+            mFragmentTransaction.replace(R.id.container_view,new HomeOnTrip());
+        }else{
+            mFragmentTransaction.replace(R.id.container_view,new Home());
+        }
+
         mFragmentTransaction.commit();
     }
 
@@ -91,26 +101,27 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction mFragmentTransaction;
 
         if (id == R.id.nav_home) {
-            mFragmentManager = getSupportFragmentManager();
-            mFragmentTransaction = mFragmentManager.beginTransaction();
-            mFragmentTransaction.replace(R.id.container_view,new PrimaryActivity()).commit();
-
-        } else if (id == R.id.nav_add_fill_up) {
+            setHome();
+        } else if (id == R.id.nav_view_vehicles) {
             mFragmentManager = getSupportFragmentManager();
             mFragmentTransaction = mFragmentManager.beginTransaction();
             mFragmentTransaction.replace(R.id.container_view,new AddFillUp());
             mFragmentTransaction.commit();
 
-        } else if (id == R.id.nav_charts) {
+        } else if (id == R.id.nav_my_progress) {
             mFragmentManager = getSupportFragmentManager();
             mFragmentTransaction = mFragmentManager.beginTransaction();
             mFragmentTransaction.replace(R.id.container_view,new TabFragment()).commit();
 
-        } else if (id == R.id.nav_stats) {
+        } else if (id == R.id.nav_my_trips) {
+            mFragmentManager = getSupportFragmentManager();
+            mFragmentTransaction = mFragmentManager.beginTransaction();
+            mFragmentTransaction.replace(R.id.container_view,new MyTrips()).commit();
 
-        } else if (id == R.id.nav_profile) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_my_profile) {
+            mFragmentManager = getSupportFragmentManager();
+            mFragmentTransaction = mFragmentManager.beginTransaction();
+            mFragmentTransaction.replace(R.id.container_view,new MyProfile()).commit();
 
         }
 

@@ -18,6 +18,7 @@
         <activity
             android:name=".view.LogIn"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="Fuel Tracker"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.MyStat" />
+        <activity android:name=".view.MyTrips" />
+        <activity android:name=".view.MyProfile"></activity>
     </application>
 
 </manifest>

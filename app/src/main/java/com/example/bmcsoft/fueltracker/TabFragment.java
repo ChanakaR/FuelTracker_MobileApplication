@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.bmcsoft.fueltracker.chart.BarChartFragment;
 import com.example.bmcsoft.fueltracker.chart.LineChartFragment;
 import com.example.bmcsoft.fueltracker.chart.PieChartFragment;
+import com.example.bmcsoft.fueltracker.view.MyStat;
 
 /**
  * Created by bmCSoft on 2016-04-12.
@@ -69,8 +70,8 @@ public class TabFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new LineChartFragment();
-                case 1 : return new PieChartFragment();
+                case 0 : return new MyStat();
+                case 1 : return new LineChartFragment();
                 case 2 : return new BarChartFragment();
             }
             return null;
@@ -91,11 +92,11 @@ public class TabFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             switch (position){
                 case 0 :
-                    return "Primary";
+                    return "My Stat";
                 case 1 :
-                    return "Social";
+                    return "Millage";
                 case 2 :
-                    return "Updates";
+                    return "Cost on fuel";
             }
             return null;
         }

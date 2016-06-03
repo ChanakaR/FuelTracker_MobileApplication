@@ -7,29 +7,25 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Home" />
         <item
-            android:id="@+id/nav_add_fill_up"
+            android:id="@+id/nav_view_vehicles"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Add fill up" />
+            android:title="View Vehicles" />
         <item
-            android:id="@+id/nav_stats"
+            android:id="@+id/nav_my_trips"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Stats" />
+            android:title="My Trips" />
         <item
-            android:id="@+id/nav_charts"
+            android:id="@+id/nav_my_progress"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Charts" />
+            android:title="My Progress" />
     </group>
 
     <item android:title="Settings">
         <menu>
             <item
-                android:id="@+id/nav_profile"
+                android:id="@+id/nav_my_profile"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Profile" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="My Profile" />
         </menu>
     </item>
 

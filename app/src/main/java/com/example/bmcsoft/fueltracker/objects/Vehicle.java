@@ -4,6 +4,34 @@ package com.example.bmcsoft.fueltracker.objects;
  * Created by bmCSoft on 2016-05-02.
  */
 public class Vehicle {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setVclass(String vclass) {
+        this.vclass = vclass;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public void setLplate(String lplate) {
+        this.lplate = lplate;
+    }
+
     private String id;
     private String vclass;
     private String make;
@@ -49,6 +77,10 @@ public class Vehicle {
         this.model=model;
         this.year=year;
         this.fuelType=fType;
+    }
+
+    public Vehicle(){
+
     }
 
 }

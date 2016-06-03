@@ -9,82 +9,162 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bmcsoft.fueltracker.view.HomeOnTrip">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/highlighted_text_material_dark">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:src="@drawable/start_trip"/>
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:text="YOU ARE ON A TRIP"
-                android:textAlignment="center"
-                android:textColor="#0e9ea7"
-                android:textSize="20dp"
-                android:focusableInTouchMode="false" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/highlighted_text_material_dark">
 
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/start_trip"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:text="YOU ARE ON A TRIP"
+                    android:textAlignment="center"
+                    android:textColor="#0e9ea7"
+                    android:textSize="20dp"
+                    android:focusableInTouchMode="false" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:background="#e0e6e6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Date"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textAlignment="center"
+                        android:id="@+id/date_home_on_trip"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Start time"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textAlignment="center"
+                        android:id="@+id/start_time_home_on_trip"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Vehicle"
+                        android:textAlignment="center"
+                        android:id="@+id/text_1_home_on_trip"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textAlignment="center"
+                        android:id="@+id/vehicle_home_on_trip"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Description"
+                        android:textAlignment="center"
+                        android:id="@+id/text_2_home_on_trip"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textAlignment="center"
+                        android:id="@+id/description_home_on_trip"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Add FillUp"
+                    android:id="@+id/add_fillup_home_on_trip"
+                    android:background="#adacac"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="End Trip"
+                    android:id="@+id/end_trip_home_on_trip"
+                    android:background="#adacac"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:background="#e0e6e6">
+    </ScrollView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Vehicle"
-                android:textAlignment="center"
-                android:id="@+id/text_1_home_on_trip"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Description"
-                android:textAlignment="center"
-                android:id="@+id/text_2_home_on_trip"/>
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Add FillUp"
-                android:id="@+id/add_fillup_home_on_trip"
-                android:background="#adacac"
-                android:textColor="#fff"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="End Trip"
-                android:id="@+id/end_trip_home_on_trip"
-                android:background="#adacac"
-                android:textColor="#fff"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        
-    </LinearLayout>
 
 </RelativeLayout>

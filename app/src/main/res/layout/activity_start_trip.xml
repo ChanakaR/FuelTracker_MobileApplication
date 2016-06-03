@@ -9,120 +9,128 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".view.StartTrip">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/highlighted_text_material_dark">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:src="@drawable/start_trip"
-                android:id="@+id/header_s_trip"/>
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:text="START A TRIP"
-                android:textAlignment="center"
-                android:textColor="#0e9ea7"
-                android:textSize="20dp"
-                android:focusableInTouchMode="false" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/highlighted_text_material_dark">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/start_trip"
+                    android:id="@+id/header_s_trip"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:text="START A TRIP"
+                    android:textAlignment="center"
+                    android:textColor="#0e9ea7"
+                    android:textSize="20dp"
+                    android:focusableInTouchMode="false" />
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:background="#e0e6e6">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Select Vehicle"
+                    android:textAlignment="center"
+                    android:id="@+id/text_1_s_trip"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="4dp"
+                    android:id="@+id/vehicle_list_s_trip"
+                    android:background="#fff"
+                    android:textAlignment="center"
+                    android:spinnerMode="dialog">
+                </Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Odometer count"
+                    android:textAlignment="center"
+                    android:id="@+id/text_2_s_trip"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="4dp"
+                    android:id="@+id/om_count_s_trip"
+                    android:textAlignment="center"
+                    android:background="#fff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Description"
+                    android:textAlignment="center"
+                    android:id="@+id/text_3_s_trip"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="4dp"
+                    android:textAlignment="center"
+                    android:id="@+id/description_s_trip"
+                    android:background="#fff" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Start"
+                    android:id="@+id/start_trip_s_trip"
+                    android:background="#adacac"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:background="#e0e6e6">
+    </ScrollView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Select Vehicle"
-                android:textAlignment="center"
-                android:id="@+id/text_1_s_trip"/>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:padding="4dp"
-                android:id="@+id/vehicle_list_s_trip"
-                android:background="#fff"
-                android:textAlignment="center"
-                android:spinnerMode="dialog">
-            </Spinner>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
-                android:text="Odometer count"
-                android:textAlignment="center"
-                android:id="@+id/text_2_s_trip"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:padding="4dp"
-                android:id="@+id/om_count_s_trip"
-                android:textAlignment="center"
-                android:background="#fff" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Description"
-                android:textAlignment="center"
-                android:id="@+id/text_3_s_trip"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:padding="4dp"
-                android:textAlignment="center"
-                android:id="@+id/description_s_trip"
-                android:background="#fff" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Start"
-                android:id="@+id/start_trip_s_trip"
-                android:background="#adacac"
-                android:textColor="#fff"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </LinearLayout>
 
 
 

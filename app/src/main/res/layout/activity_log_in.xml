@@ -87,6 +87,17 @@
                     android:password="true" />
 
 
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="Remember me"
+                    android:id="@+id/remeber_me"
+                    android:textColor="@android:color/holo_blue_dark" />
+
 
             </LinearLayout>
 
@@ -121,14 +132,14 @@
                     android:background="@android:color/holo_orange_dark"
                     android:textColor="#fff"
                     android:textSize="10dp"
-                    android:onClick="goMainMenu"/>
+                    android:onClick="goMainMenu" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/secondary_text_disabled_material_light">
 
                 <TextView

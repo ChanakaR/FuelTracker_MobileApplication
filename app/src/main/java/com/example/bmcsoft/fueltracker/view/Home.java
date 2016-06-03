@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +14,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.bmcsoft.fueltracker.PrimaryActivity;
 import com.example.bmcsoft.fueltracker.R;
 import com.example.bmcsoft.fueltracker.dataaccess.DAConfig;
 import com.example.bmcsoft.fueltracker.dataaccess.RequestHandler;
@@ -32,7 +28,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Home extends Fragment implements View.OnClickListener{
@@ -92,12 +87,12 @@ public class Home extends Fragment implements View.OnClickListener{
                                                                                   long id) {
                                                            for(Vehicle v : SharedObject.VEHICLE_LIST){
                                                                if(v.getLplate()==parent.getItemAtPosition(pos).toString()){
-                                                                   SharedObject.cur_selected_vehicle = v;
+                                                                   SharedObject.CUR_SELECTED_VEHICLE = v;
                                                                }
                                                            }
 
                                                            Toast.makeText(parent.getContext(),
-                                                                   "On Item Select : \n" + SharedObject.cur_selected_vehicle.getVclass(),
+                                                                   "On Item Select : \n" + SharedObject.CUR_SELECTED_VEHICLE.getVclass(),
                                                                    Toast.LENGTH_LONG).show();
                                                        }
 

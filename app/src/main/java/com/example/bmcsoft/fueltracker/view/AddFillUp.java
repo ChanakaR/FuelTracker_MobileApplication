@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +17,6 @@ import com.example.bmcsoft.fueltracker.R;
 import com.example.bmcsoft.fueltracker.dataaccess.DAConfig;
 import com.example.bmcsoft.fueltracker.dataaccess.RequestHandler;
 import com.example.bmcsoft.fueltracker.objects.SharedObject;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,10 +40,10 @@ public class AddFillUp extends Fragment implements View.OnClickListener{
         TextView txt_vehicle_ftype = (TextView)view.findViewById(R.id.text_vehicle_ftype);
         //TextView txt_date = (TextView)view.findViewById(R.id.text_date);
 
-        String v_name =SharedObject.cur_selected_vehicle.getVclass()+"-"+SharedObject.cur_selected_vehicle.getMake()+"-"+SharedObject.cur_selected_vehicle.getModel();
+        String v_name =SharedObject.CUR_SELECTED_VEHICLE.getVclass()+"-"+SharedObject.CUR_SELECTED_VEHICLE.getMake()+"-"+SharedObject.CUR_SELECTED_VEHICLE.getModel();
         txt_vehicle_name.setText(v_name);
-        txt_vehicle_lplate.setText(SharedObject.cur_selected_vehicle.getLplate());
-        txt_vehicle_ftype.setText(SharedObject.cur_selected_vehicle.getFuelType());
+        txt_vehicle_lplate.setText(SharedObject.CUR_SELECTED_VEHICLE.getLplate());
+        txt_vehicle_ftype.setText(SharedObject.CUR_SELECTED_VEHICLE.getFuelType());
 
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         //txt_date.setText(date);
@@ -64,8 +61,8 @@ public class AddFillUp extends Fragment implements View.OnClickListener{
         final String amount = ((EditText)view.findViewById(R.id.input_fuel_amount)).getText().toString();
         final String total_price = ((EditText)view.findViewById(R.id.input_total_price)).getText().toString();
         final String odo_meter = ((EditText)view.findViewById(R.id.input_odo_meter)).getText().toString();
-        final String vehicle_id =  (SharedObject.cur_selected_vehicle.getId());
-        final String driver_id = "4";
+        final String vehicle_id =  (SharedObject.CUR_SELECTED_VEHICLE.getId());
+        final String driver_id = Integer.toString(SharedObject.CUR_USER.getId());
 
         class AddFUp extends AsyncTask<Void,Void,String> {
 
@@ -96,7 +93,6 @@ public class AddFillUp extends Fragment implements View.OnClickListener{
                 params.put("vehicle_id",vehicle_id);
                 params.put("driver_id",driver_id);
                 params.put("odo_meter",odo_meter);
-
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(DAConfig.URL_ADD_FILL_UP, params);
